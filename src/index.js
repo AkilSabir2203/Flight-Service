@@ -1,12 +1,15 @@
 import express from "express";
-
-import { ServerConfig } from "./config/index.js";
+import { PORT } from "./config/index.js";
 import apiRoutes from "./routes/index.js";
 
 const app = express();
 
-app.use("/api", apiRoutes);
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.listen(ServerConfig.PORT, () => {
-    console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
-})
+app.use("/api", apiRoutes);
+app.use("/flightsService/api", apiRoutes);
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on port ${PORT}`);
+});

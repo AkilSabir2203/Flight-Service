@@ -1,5 +1,12 @@
-import info from "./info-controllers.js";
+export { default as InfoController } from "./info-controllers.js";
+import * as AirplaneController from "./airplane-controller.js";
+import * as CityController from "./city-controller.js";
+import * as AirportController from "./airport-controller.js";
+import * as FlightController from "./flight-controller.js";
 
-export default {
-  info
+export {
+  AirplaneController,
+  CityController,
+  AirportController,
+  FlightController,
 };

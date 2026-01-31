@@ -1,9 +1,8 @@
 import express from "express";
-
-import InfoController from "../../controllers/index.js";
+import { InfoController } from "../../controllers/index.js";
 
 const router = express.Router();
 
-router.get('/info', InfoController.info);
+router.get("/info", InfoController);
 
 export default router;

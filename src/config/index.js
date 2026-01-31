@@ -1,4 +1,3 @@
-import ServerConfig from "./server-config.js";
-import logger from "./logger-config.js";
+export * from "./server-config.js";
+export { default as logger } from "./logger-config.js";
 
-export { ServerConfig, logger };
