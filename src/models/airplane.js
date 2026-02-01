@@ -1,11 +1,17 @@
-'use strict';
-
-import { Model } from 'sequelize';
+import { Model } from "sequelize";
 
 export default (sequelize, DataTypes) => {
   class Airplane extends Model {
     static associate(models) {
-      // define association here
+      this.hasMany(models.Flight, {
+        foreignKey: "airplaneId",
+        onDelete: "CASCADE",
+      });
+
+      this.hasMany(models.Seat, {
+        foreignKey: "airplaneId",
+        onDelete: "CASCADE",
+      });
     }
   }
 
@@ -13,16 +19,22 @@ export default (sequelize, DataTypes) => {
     {
       modelNumber: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+        validate: {
+          isAlphanumeric: true,
+        },
       },
       capacity: {
         type: DataTypes.INTEGER,
-        allowNull: false
-      } 
+        defaultValue: 0,
+        validate: {
+          max: 1000,
+        },
+      },
     },
     {
       sequelize,
-      modelName: 'Airplane',
+      modelName: "Airplane",
     }
   );
 

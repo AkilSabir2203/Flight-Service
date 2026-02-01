@@ -1,7 +1,7 @@
-const express = require("express");
+import express from "express";
 
-const { FlightController } = require("../../controllers");
-const { FlightMiddlewares } = require("../../middlewares");
+import { FlightController } from "../../controllers/index.js";
+import { FlightMiddlewares } from "../../middlewares/index.js";
 
 const router = express.Router();
 
@@ -25,4 +25,4 @@ router.patch(
     FlightController.updateSeats
 );
 
-module.exports = router;
+export default router;
