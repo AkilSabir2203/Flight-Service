@@ -2,25 +2,25 @@
 export default {
     async up(queryInterface, Sequelize) {
         await queryInterface.bulkInsert("Seats", [
-            { airplaneId: 5, row: 1, col: "A", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 1, col: "B", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 1, col: "C", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 1, col: "D", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 1, col: "E", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 1, col: "F", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 1, col: "A", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 1, col: "B", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 1, col: "C", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 1, col: "D", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 1, col: "E", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 1, col: "F", createdAt: new Date(), updatedAt: new Date() },
 
-            { airplaneId: 5, row: 2, col: "A", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 2, col: "B", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 2, col: "C", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 2, col: "D", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 2, col: "E", createdAt: new Date(), updatedAt: new Date() },
-            { airplaneId: 5, row: 2, col: "F", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 2, col: "A", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 2, col: "B", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 2, col: "C", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 2, col: "D", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 2, col: "E", createdAt: new Date(), updatedAt: new Date() },
+            { airplaneId: 1, row: 2, col: "F", createdAt: new Date(), updatedAt: new Date() },
         ]);
     },
 
     async down(queryInterface, Sequelize) {
         await queryInterface.bulkDelete("Seats", {
-            airplaneId: 5,
+            airplaneId: 1,
             row: [1, 2],
         });
     },
